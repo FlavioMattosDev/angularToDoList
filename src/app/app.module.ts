@@ -9,6 +9,8 @@ import { TaskListComponent } from './components/task-list/task-list.component';
 import { CurrencyFormatPipe } from './pipes/currencyFormat.pipe';
 import { TaskDetailComponent } from './components/task-detail/task-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DateGreaterThanTodayDirective } from './directives/date-greater-than-today.directive';
+import { TaskFiltroComponent } from './components/task-filtro/task-filtro.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TaskListComponent,
     CurrencyFormatPipe,
     TaskDetailComponent,
+    DateGreaterThanTodayDirective,
+    TaskFiltroComponent,
   ],
   imports: [
     BrowserModule,
