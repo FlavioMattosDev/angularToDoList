@@ -3,10 +3,13 @@
   <ul *ngIf="isVisible">
     <li *ngFor="let task of tasks">
       <div>
-        {{task.title}} - {{task.date}} -- {{task.description}}
+        {{task.title}} -
+        {{task.date | date:'dd/MM/yyyy'}} -
+        {{task.description}}
       </div>
     </li>
   </ul>
 
-  <button (click)="mostrarLista()">Mostrar console.log</button>
+  <button (click)="mostrarLista()">Mostrar lista</button>
 </div>
+

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { IListTask } from 'src/app/app.component';
 
 @Component({
@@ -6,8 +6,8 @@ import { IListTask } from 'src/app/app.component';
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.scss']
 })
-export class TaskListComponent {
-
+export class TaskListComponent{
+  name = 'teste';
   isVisible = true;
 
   @Input() tasks: IListTask[] = []

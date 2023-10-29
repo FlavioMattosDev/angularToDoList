@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { TaskFormComponent } from './components/task-form/task-form.component';
 import { FormsModule } from '@angular/forms';
 import { TaskListComponent } from './components/task-list/task-list.component';
+import { CurrencyFormatPipe } from './pipes/currencyFormat.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskFormComponent,
-    TaskListComponent
+    TaskListComponent,
+    CurrencyFormatPipe,
   ],
   imports: [
     BrowserModule,
