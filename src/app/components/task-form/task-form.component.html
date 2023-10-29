@@ -1,18 +1,29 @@
 <div>
   <h2>Adicionar nova tarefa</h2>
 
-  <form (ngSubmit)="submitTask()">
-    <div>
+  <form (ngSubmit)="submitTask()" #form="ngForm">
+    <div class="form-group">
       <label for="title">Titulo</label>
-      <input type="text" name="title" id="title" [(ngModel)]="newTask.title" />
+      <input type="text" name="title" id="title" [(ngModel)]="newTask.title" required minlength="3"/>
+
+      <div *ngIf="!form.controls['title']?.valid && form.controls['title']?.touched">
+        <p class="texto-invalido-red">Nome inválido!</p>
+      </div>
     </div>
     <div>
       <label for="description">Descrição</label>
-      <input type="text" name="description" id="description" [(ngModel)]="newTask.description" />
+      <input type="text" name="description" id="description" [(ngModel)]="newTask.description" required minlength="3"/>
+      <div *ngIf="!form.controls['description']?.valid && form.controls['description']?.touched">
+        <p class="texto-invalido-red">Descrição inválida!</p>
+      </div>
     </div>
     <div>
       <label for="date">Data de vencimento</label>
-      <input type="date" name="date" id="date" [(ngModel)]="newTask.date"/>
+      <input type="date" name="date" id="date" [(ngModel)]="newTask.date" required pattern="^\d{4}-\d{2}-\d{2}$"/>
+
+      <div *ngIf="!form.controls['date']?.valid && form.controls['date']?.touched">
+        <p class="texto-invalido-red">Data inválida!</p>
+      </div>
     </div>
 
     <div>
@@ -22,6 +33,10 @@
         <option value="trabalhando">Trabalhando</option>
         <option value="finalizado">Finalizado</option>
       </select>
+
+      <div *ngIf="!form.controls['status']?.valid && form.controls['status']?.touched">
+        <p>Selecione um Status!</p>
+      </div>
     </div>
 
     <button type="submit" class="btn btn-primary">Adicionar Tarefas</button>

@@ -10,6 +10,12 @@ export class TaskListComponent implements OnInit {
   name = 'teste';
   isVisible = true;
 
+  columns = [
+    {name: 'To Do', id: 'toDo'},
+    {name: 'In Progress', id: 'trabalhando'},
+    {name: 'Done', id: 'finalizado'},
+  ]
+
   @Input() tasks: Task[] = [];
   @Output() handleTask = new EventEmitter();
 
