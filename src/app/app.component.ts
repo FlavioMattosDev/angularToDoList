@@ -1,35 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-
-export interface IListTask {
-  title: string;
-  description: string;
-  date: Date;
-}
+import { Component } from '@angular/core';
+import { Task } from './models/task.model';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-  listTask: IListTask[] = [];
-  teste = true;
 
-  constructor() {}
+export class AppComponent {
+  title = 'treinoTODO'
+  listTask: Task[] = [];
+  selectedTask: Task | null = null;
 
-  ngOnInit() {
-    this.listTask.push({
-      date: new Date(),
-      description: 'Descrição Teste',
-      title: 'Titulo Teste'
-    })
-  }
-
-  onAddTask(task: IListTask) {
+  onAddTask(task: Task) {
     this.listTask.push(task);
   }
 
-  hide() {
-    this.teste = !this.teste;
+  handleTask(task: Task) {
+    this.selectedTask = task;
   }
+
+  fecharDetalhes() {
+    this.selectedTask = null;
+  }
+
 }
