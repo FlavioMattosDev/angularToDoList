@@ -2,7 +2,7 @@
   <h2>Tarefas</h2>
 
   <app-task-filtro (onChangeFiltro)="handleFiltro($event)"></app-task-filtro>
-  <!-- 
+  <!--
     <ul *ngIf="isVisible">
     <li *ngFor="let task of tasksFiltradas">
       <div (click)="selectedTask(task)">
@@ -19,13 +19,17 @@
       <ng-container *ngFor="let item of tasksFiltradas">
         <ng-container *ngIf="item.status === column.id">
           <div class="card">
-            <h3>{{ item.title }}</h3>
+            <h4>{{ item.title }}</h4>
             <p>{{ item.description }}</p>
+
+            <div>
+              <button class="btn btn-success w-100" (click)="selectedTask(item)">
+                Ver descrição
+              </button>
+            </div>
           </div>
         </ng-container>
       </ng-container>
     </div>
   </div>
-
-  <button (click)="mostrarLista()">Mostrar lista</button>
 </div>

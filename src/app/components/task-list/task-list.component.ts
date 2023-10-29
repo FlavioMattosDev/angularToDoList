@@ -10,11 +10,12 @@ export class TaskListComponent implements OnInit {
   name = 'teste';
   isVisible = true;
 
+
   columns = [
-    {name: 'To Do', id: 'toDo'},
-    {name: 'In Progress', id: 'trabalhando'},
-    {name: 'Done', id: 'finalizado'},
-  ]
+    { name: 'To Do', id: 'toDo' },
+    { name: 'In Progress', id: 'trabalhando' },
+    { name: 'Done', id: 'finalizado' },
+  ];
 
   @Input() tasks: Task[] = [];
   @Output() handleTask = new EventEmitter();
@@ -25,9 +26,6 @@ export class TaskListComponent implements OnInit {
     this.tasksFiltradas = this.tasks;
   }
 
-  mostrarLista() {
-    this.isVisible = !this.isVisible;
-  }
 
   selectedTask(task: Task) {
     this.handleTask.emit(task);
@@ -47,3 +45,4 @@ export class TaskListComponent implements OnInit {
     });
   }
 }
+
