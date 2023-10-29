@@ -15,6 +15,15 @@
       <input type="date" name="date" id="date" [(ngModel)]="newTask.date"/>
     </div>
 
-    <button type="submit">Adicionar Tarefas</button>
+    <div>
+      <label for="status">Status</label>
+      <select name="status" id="status" [(ngModel)]="newTask.status">
+        <option value="toDo">ToDo</option>
+        <option value="trabalhando">Trabalhando</option>
+        <option value="finalizado">Finalizado</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Adicionar Tarefas</button>
   </form>
 </div>
