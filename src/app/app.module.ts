@@ -4,13 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TaskFormComponent } from './components/task-form/task-form.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TaskListComponent } from './components/task-list/task-list.component';
 import { CurrencyFormatPipe } from './pipes/currencyFormat.pipe';
 import { TaskDetailComponent } from './components/task-detail/task-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DateGreaterThanTodayDirective } from './directives/date-greater-than-today.directive';
 import { TaskFiltroComponent } from './components/task-filtro/task-filtro.component';
+import { TaskFormReactiveComponent } from './components/task-form-reactive/task-form-reactive.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +22,14 @@ import { TaskFiltroComponent } from './components/task-filtro/task-filtro.compon
     TaskDetailComponent,
     DateGreaterThanTodayDirective,
     TaskFiltroComponent,
+    TaskFormReactiveComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
